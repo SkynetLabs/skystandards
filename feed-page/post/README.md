@@ -39,7 +39,7 @@
             "siacoin",
             "crypto"
         ],
-        "meta": { // Can be used to attach metadata from external platforms mirrored to Skynet (for example YouTube) or just extra metadata not covered by this spec
+        "ext": { // Can be used to attach metadata from external platforms mirrored to Skynet (for example YouTube) or just extra metadata not covered by this spec
             "yt": {
                 "videoId": "mzX1AX_MSh0",
                 "channelId": "UCYtlUu6bUghAca0ADmlxCKw",
