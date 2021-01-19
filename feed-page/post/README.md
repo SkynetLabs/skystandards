@@ -25,8 +25,9 @@
             "png+1280x720": "sia://IADUs8d9CQjUO34LmdaaNPK_STuZo24rpKVfYW3wPPM2uQ",
             "jpeg": "sia://IADUs8d9CQjUO34LmdaaNPK_STuZo24rpKVfYW3wPPM2uQ",
         },
-        "text": "Short text or title", // REQUIRED, 512 Chars max, higlighted and used as title when description is available
-        "description": "", // Description, supports Markdown
+        "title": "This is a title", // optional, higlighted and used as title of the post when available
+        "text": "Lorem ipsum dolor sit amet.", // REQUIRED Text content and/or description
+        "textContentType":"text/plain", // text/plain by default
         "aspectRatio": 1.457858769931663, // Aspect ratio of the image and the video
         "blurHash": "L@L4$+00j@xuayjtfQayofayfQj[", // BlurHash of the image shown while loading
         "tags":[ // Contains tags that have a special meaning used by the skapp to display it in a specific way or filter it out
