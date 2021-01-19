@@ -11,13 +11,17 @@
 
     "content": { // Every field in this map is OPTIONAL, if not specified otherwise
         "mediaDuration": 1235312612, // duration of video or audio in milliseconds (int)
+
+        // video, audio and image follow the format FILE_FORMAT+RESOLUTION_OR_QUALITY
+        // RESOLUTION_OR_QUALITY is optional, more specific formats should be listed FIRST
         "video:": { // video content with different resolution and file formats
             "mp4_noaudio+1920x1080": "sia://CACqf4NlIMlA0CCCieYGjpViPGyfyJ4v1x3bmuCKZX8FKA",
             "mp4+1920x1080": "sia://CACqf4NlIMlA0CCCieYGjpViPGyfyJ4v1x3bmuCKZX8FKA/1920x1080_version.mp4",
             "mp4+1280x720": "sia://CACqf4NlIMlA0CCCieYGjpViPGyfyJ4v1x3bmuCKZX8FKA/1280x720_version.mp4"
         },
         "audio": { // audio content with different resolution and file formats
-            "mp3": "sia://_A2zt5SKoqwnnZU4cBF8uBycSKULXMyeg1c5ZISBr2Q3dA"
+            "mp3+128k": "sia://_A2zt5SKoqwnnZU4cBF8uBycSKULXMyeg1c5ZISBr2Q3dA",
+            "mp3": "sia://_A2zt5SKoqwnnZU4cBF8uBycSKULXMyeg1c5ZISBr2Q3dA",
         },
         "image": { // image content with different resolution and file formats
             // also used as thumbnail when video is present
