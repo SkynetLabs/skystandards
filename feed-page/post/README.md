@@ -46,7 +46,7 @@
                 "url": "sia://CACqf4NlIMlA0CCCieYGjpViPGyfyJ4v1x3bmuCKZX8FKA/1280x720_version.webm"
             }
         ],
-        "audio": { // audio content with different resolution and file formats
+        "audio": [ // audio content with different resolution and file formats
             {
                 "ext": "mp3",
                 "acodec": "mp3",
@@ -58,8 +58,8 @@
                 "abr": 192, // kbps of the audio
                 "url": "sia://_A2zt5SKoqwnnZU4cBF8uBycSKULXMyeg1c5ZISBr2Q3dA"
             }
-        },
-        "image": { // image content with different resolution and file formats
+        ],
+        "image": [ // image content with different resolution and file formats
             // also used as thumbnail when video is present
             {
                 "ext": "png",
@@ -77,7 +77,7 @@
                 "ext": "jpeg",
                 "url": "sia://sia://IADUs8d9CQjUO34LmdaaNPK_STuZo24rpKVfYW3wPPM2uQ"
             }
-        },
+        ],
         "title": "This is a title", // optional, higlighted and used as title of the post when available
         "text": "Lorem ipsum dolor sit amet.", // REQUIRED Text content and/or description
         "textContentType":"text/plain", // text/plain by default
