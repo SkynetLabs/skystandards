@@ -2,7 +2,7 @@
 
 ```json
 {
-    "$type": "post@1", // Type definition with spec version number (1)
+    "$schema": "sia://skystandards.hns/v1/post.schema.json", // Type definition with spec version number (1)
     "id": 5, // Required, this id MUST be unique on the page this post is on. For example, this post could have the full id d448f1562c20dbafa42badd9f88560cd1adb2f177b30f0aa048cb243e55d37bd/feed/posts/1/5 (userId/structure/feedId/pageId/postId)
 
     "repostOf":"5335179d69a3191ccb6329dcc0d2aaac2cada7ce145cbbd5543c8c2ee97e2a4a/feed/posts/0/11", // Optional, full ID of the post being reposted (If this key is present, this post is a repost and does not need to contain a "content")
