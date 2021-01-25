@@ -12,22 +12,71 @@
     "content": { // Every field in this map is OPTIONAL, if not specified otherwise
         "mediaDuration": 1235312612, // duration of video or audio in milliseconds (int)
 
-        // video, audio and image follow the format FILE_FORMAT+RESOLUTION_OR_QUALITY
-        // RESOLUTION_OR_QUALITY is optional, more specific formats should be listed FIRST
-        "video:": { // video content with different resolution and file formats
-            "mp4_noaudio+1920x1080": "sia://CACqf4NlIMlA0CCCieYGjpViPGyfyJ4v1x3bmuCKZX8FKA",
-            "mp4+1920x1080": "sia://CACqf4NlIMlA0CCCieYGjpViPGyfyJ4v1x3bmuCKZX8FKA/1920x1080_version.mp4",
-            "mp4+1280x720": "sia://CACqf4NlIMlA0CCCieYGjpViPGyfyJ4v1x3bmuCKZX8FKA/1280x720_version.mp4"
-        },
+        // video, audio and image follow the same format
+        // more specific formats should be listed FIRST
+        // if vcodec is specified, the file contains video (otherwise null)
+        // if acodec is specified, the file contains audio (otherwise null)
+        "video:": [ // video content with different resolution and file formats
+            {
+                "ext": "mp4",
+                "vcodec": "avc1.4d400b",
+                "fps": 25, // optional
+                "w": 1920, // width
+                "h": 1080, // height
+                "url": "sia://CACqf4NlIMlA0CCCieYGjpViPGyfyJ4v1x3bmuCKZX8FKA"
+            },
+            {
+                "ext": "webm",
+                "vcodec": "vp9",
+                "acodec": "mp4a.40.2",
+                "abr": 96, // kbps of the audio
+                "fps": 25, // optional
+                "w": 1920, // width
+                "h": 1080, // height
+                "url": "sia://CACqf4NlIMlA0CCCieYGjpViPGyfyJ4v1x3bmuCKZX8FKA/1920x1080_version.webm"
+            },
+            {
+                "ext": "webm",
+                "vcodec": "vp9",
+                "acodec": "mp4a.40.2",
+                "abr": 96, // kbps of the audio
+                "fps": 25, // optional
+                "w": 1280, // width
+                "h": 720, // height
+                "url": "sia://CACqf4NlIMlA0CCCieYGjpViPGyfyJ4v1x3bmuCKZX8FKA/1280x720_version.webm"
+            }
+        ],
         "audio": { // audio content with different resolution and file formats
-            "mp3+128k": "sia://_A2zt5SKoqwnnZU4cBF8uBycSKULXMyeg1c5ZISBr2Q3dA",
-            "mp3": "sia://_A2zt5SKoqwnnZU4cBF8uBycSKULXMyeg1c5ZISBr2Q3dA",
+            {
+                "ext": "mp3",
+                "acodec": "mp3",
+                "url": "sia://_A2zt5SKoqwnnZU4cBF8uBycSKULXMyeg1c5ZISBr2Q3dA"
+            },
+            {
+                "ext": "mp3",
+                "acodec": "mp3",
+                "abr": 192, // kbps of the audio
+                "url": "sia://_A2zt5SKoqwnnZU4cBF8uBycSKULXMyeg1c5ZISBr2Q3dA"
+            }
         },
         "image": { // image content with different resolution and file formats
             // also used as thumbnail when video is present
-            "png+1920x1080": "sia://IADUs8d9CQjUO34LmdaaNPK_STuZo24rpKVfYW3wPPM2uQ",
-            "png+1280x720": "sia://IADUs8d9CQjUO34LmdaaNPK_STuZo24rpKVfYW3wPPM2uQ",
-            "jpeg": "sia://IADUs8d9CQjUO34LmdaaNPK_STuZo24rpKVfYW3wPPM2uQ",
+            {
+                "ext": "png",
+                "w": 1920, // width
+                "h": 1080, // height
+                "url": "sia://sia://IADUs8d9CQjUO34LmdaaNPK_STuZo24rpKVfYW3wPPM2uQ"
+            },
+            {
+                "ext": "png",
+                "w": 1280, // width
+                "h": 720, // height
+                "url": "sia://sia://IADUs8d9CQjUO34LmdaaNPK_STuZo24rpKVfYW3wPPM2uQ"
+            },
+            {
+                "ext": "jpeg",
+                "url": "sia://sia://IADUs8d9CQjUO34LmdaaNPK_STuZo24rpKVfYW3wPPM2uQ"
+            }
         },
         "title": "This is a title", // optional, higlighted and used as title of the post when available
         "text": "Lorem ipsum dolor sit amet.", // REQUIRED Text content and/or description
