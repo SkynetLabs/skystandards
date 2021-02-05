@@ -1,7 +1,6 @@
 # Feed Page
 
-
-
+<!-- embedme feed-page.json -->
 ```json
 {
    "$schema": "sia://skystandards.hns/v1/feedPage.schema.json", // Type definition with spec version number (1)
@@ -10,4 +9,5 @@
       // This list contains multiple Post objects
    ]
 }
+
 ```

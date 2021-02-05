@@ -1,5 +1,6 @@
 # Post
 
+<!-- embedme post.json -->
 ```json
 {
     "$schema": "sia://skystandards.hns/v1/post.schema.json", // Type definition with spec version number (1)
@@ -108,4 +109,5 @@
         "ts": 1606169889148, // Upload/posting date (Using a unix timestamp because it's compact and prevents timezone-specific bugs)
     }
 }
+
 ```
