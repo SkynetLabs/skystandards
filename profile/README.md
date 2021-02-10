@@ -14,6 +14,8 @@ SkyID has access to every scope and manages the master key
 `something with storage`: Private file storage
 `skapp`: skapp.io specific developer and skapp data
 
+scope names MUST be valid HNS domains, because they link to their definition and description.
+
 ### Examples how Skapps can use this scopes
 
 SkyFeed could ask for `skyfeed` and `skysocial` to post content and modify the social graph
