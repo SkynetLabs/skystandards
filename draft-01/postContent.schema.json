@@ -1,0 +1,111 @@
+{
+    "$id": "https://skystandards.hns.siasky.net/draft-01/postContent.schema.json",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "description": "The content of a post",
+    "type": "object",
+    "required": [],
+    "properties": {
+        "media": {
+            "$ref": "../draft-01/media.schema.json",
+            "description": "A media object can contain an image, video, audio or combination of all of them"
+        },
+        "gallery": {
+            "type": "array",
+            "description": "List of media objects in a \"gallery\", can be show in a carousel or list\nuseful for app screenshots or galleries\nNOT TO BE USED for something like music albums, because it prevents individual tracks from being referenced, saved, rated, reposted...",
+            "items": {
+                "$ref": "../draft-01/media.schema.json"
+            }
+        },
+        "link": {
+            "type": "string",
+            "format": "uri",
+            "description": "Can be used as a link to a url referred by this post"
+        },
+        "linkTitle": {
+            "type": "string",
+            "description": "title of the url, only used for preview",
+            "maxLength": 256
+        },
+        "title": {
+            "type": "string",
+            "description": "higlighted and used as title of the post when available",
+            "maxLength": 256
+        },
+        "text": {
+            "type": "string",
+            "description": "Text content of the post or description",
+            "maxLength": 65536
+        },
+        "textContentType": {
+            "type": "string",
+            "description": "The content type of text",
+            "default": "text/plain",
+            "oneOf": [
+                {
+                    "type": "string",
+                    "const": "text/plain"
+                },
+                {
+                    "type": "string",
+                    "const": "text/markdown"
+                },
+                {
+                    "type": "string",
+                    "const": "text/html"
+                }
+            ]
+        },
+        "tags": {
+            "type": "array",
+            "description": "Defines special attributes of this post which have a special meaning which can be interpreted by the application showing this post",
+            "default": [],
+            "uniqueItems": true,
+            "items": {
+                "type": "string",
+                "oneOf": [
+                    {
+                        "type": "string",
+                        "const": "spoiler",
+                        "description": "Used for spoilers"
+                    },
+                    {
+                        "type": "string",
+                        "const": "nsfw",
+                        "description": "Used for NSFW content"
+                    },
+                    {
+                        "type": "string",
+                        "const": "skapp",
+                        "description": "Used for Skapp objects"
+                    },
+                    {
+                        "type": "string",
+                        "const": "yt-video",
+                        "description": "Used for YT videos"
+                    }
+                ]
+            }
+        },
+        "topics": {
+            "type": "array",
+            "description": "Can contain multiple topics (hashtags) this post fits into",
+            "default": [],
+            "items": {
+                "type": "string",
+                "maxLength": 64
+            }
+        },
+        "ext": {
+            "type": "object",
+            "propertyNames": {
+                "pattern": "^[a-z_]+$"
+            },
+            "description": "Can be used by applications to add more metadata"
+        },
+        "ts": {
+            "type": "integer",
+            "description": "Unix timestamp (in millisecons) when this post was created/posted",
+            "minimum": 0
+        }
+    }
+}

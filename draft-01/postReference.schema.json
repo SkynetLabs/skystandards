@@ -1,0 +1,11 @@
+{
+    "$id": "https://skystandards.hns.siasky.net/draft-01/postReference.schema.json",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "A reference to a Post",
+    "description": "A reference to a Post",
+    "type": "string",
+    "pattern": "^[\\da-f]{64}\\/feed\\/\\w+\\/\\d+\\/\\d+$",
+    "examples": [
+        "5335179d69a3191ccb6329dcc0d2aaac2cada7ce145cbbd5543c8c2ee97e2a4a/feed/posts/0/11"
+    ]
+}
