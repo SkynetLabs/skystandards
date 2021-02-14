@@ -1,7 +1,7 @@
 {
     "$id": "https://skystandards.hns.siasky.net/draft-01/feedPage.schema.json",
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "description": "A representation of a post",
+    "description": "A representation of a page of a feed",
     "type": "object",
     "required": [
         "userId",
@@ -15,6 +15,7 @@
         },
         "items": {
             "type": "array",
+            "description": "A list of posts on this page",
             "items": {
                 "$ref": "../draft-01/post.schema.json"
             }
