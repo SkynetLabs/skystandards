@@ -4,8 +4,7 @@
     "description": "A representation of a post",
     "type": "object",
     "required": [
-        "id",
-        "content"
+        "id"
     ],
     "properties": {
         "id": {
