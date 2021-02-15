@@ -16,6 +16,7 @@
             "exclusiveMinimum": 0
         },
         "blurHash": {
+            "type": "string",
             "description": "BlurHash of the image shown while loading or not shown due to tags (spoiler or nsfw)"
         },
         "image": {
