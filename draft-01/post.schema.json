@@ -1,0 +1,30 @@
+{
+    "$id": "https://skystandards.hns.siasky.net/draft-01/post.schema.json",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "description": "A representation of a post",
+    "type": "object",
+    "required": [
+        "id"
+    ],
+    "properties": {
+        "id": {
+            "type": "integer",
+            "description": "This ID MUST be unique on the page this post is on. For example, this post could have the full id d448f1562c20dbafa42badd9f88560cd1adb2f177b30f0aa048cb243e55d37bd/feed/posts/1/5 (userId/structure/feedId/pageId/postId)"
+        },
+        "repostOf": {
+            "$ref": "../draft-01/postReference.schema.json",
+            "description": "Full ID of the post being reposted (If this key is present, this post is a repost and does not need to contain a \"content\")"
+        },
+        "commentTo": {
+            "$ref": "../draft-01/postReference.schema.json",
+            "description": "Full ID of the post this posts is commenting on"
+        },
+        "parentHash": {
+            "$ref": "../draft-01/hash.schema.json",
+            "description": "sha256sum of the JSON string of the post being reposted or commented on to prevent unexpected edits"
+        },
+        "content": {
+            "$ref": "../draft-01/postContent.schema.json"
+        }
+    }
+}
