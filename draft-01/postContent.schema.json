@@ -95,6 +95,16 @@
                 "maxLength": 64
             }
         },
+        "pollOptions": {
+            "type": "object",
+            "propertyNames": {
+                "pattern": "^[0-9]+$"
+            },
+            "additionalProperties": {
+                "type": "string"
+            },
+            "description": "Used for polls"
+        },
         "ext": {
             "type": "object",
             "propertyNames": {
