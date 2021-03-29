@@ -21,7 +21,7 @@
         },
         "parentHash": {
             "$ref": "../draft-01/hash.schema.json",
-            "description": "sha256sum of the JSON string of the post being reposted or commented on to prevent unexpected edits"
+            "description": "Multihash of the Canonical JSON (http://wiki.laptop.org/go/Canonical_JSON) string of the post being reposted or commented on to prevent unexpected edits"
         },
         "isDeleted": {
             "type": "boolean",
