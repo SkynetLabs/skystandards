@@ -1,11 +1,12 @@
 {
     "$id": "https://skystandards.hns.siasky.net/draft-01/postReference.schema.json",
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "title": "A reference to a Post",
-    "description": "A reference to a Post",
+    "title": "A reference to a Post or FeedPage",
+    "description": "A reference to a Post or FeedPage (sky://USERID/DAC/SKAPP/FEED/PAGE#INDEX)",
     "type": "string",
-    "pattern": "^[\\da-f]{64}\\/feed\\/\\w+\\/\\d+\\/\\d+$",
+    "pattern": "^sky:\\/\\/ed25519-[\\da-f]{64}\\/[a-z\\.\\-]+\\/[a-z\\.\\-]+\\/[a-z\\.\\-]+\\/[\\w_\\.]+(#\\d+)?$",
     "examples": [
-        "5335179d69a3191ccb6329dcc0d2aaac2cada7ce145cbbd5543c8c2ee97e2a4a/feed/posts/0/11"
+        "sky://ed25519-9887c9b067418549277a5f990e468b33d57f959cb08d8663f9563c376d0c9b34/skyfeed-dev.hns/localhost/posts/page_0.json#0",
+        "sky://ed25519-d448f1562c20dbafa42badd9f88560cd1adb2f177b30f0aa048cb243e55d37bd/skyfeed-dev.hns/localhost/posts/page_1.json"
     ]
 }

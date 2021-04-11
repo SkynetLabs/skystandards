@@ -112,11 +112,6 @@
             },
             "description": "Can be used by applications to add more metadata"
         },
-        "ts": {
-            "type": "integer",
-            "description": "Unix timestamp (in millisecons) when this post was created/posted",
-            "minimum": 0
-        },
         "lang": {
             "type": "string",
             "description": "ISO 639-1 Alpha-2 language code",

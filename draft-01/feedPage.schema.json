@@ -4,14 +4,13 @@
     "description": "A representation of a page of a feed",
     "type": "object",
     "required": [
-        "userId",
+        "_self",
         "items"
     ],
     "properties": {
-        "userId": {
-            "type": "string",
-            "description": "This is the global userId used for the profile (for example by SkyID), not the scope-specific public key (To ensure interoperability)",
-            "pattern": "^[\\da-f]{64}$"
+        "_self": {
+            "$ref": "../draft-01/postReference.schema.json",
+            "description": "Reference to this page"
         },
         "items": {
             "type": "array",
