@@ -4,7 +4,8 @@
     "description": "A representation of a post",
     "type": "object",
     "required": [
-        "id"
+        "id",
+        "ts"
     ],
     "properties": {
         "id": {
@@ -40,6 +41,11 @@
         },
         "content": {
             "$ref": "../draft-01/postContent.schema.json"
+        },
+        "ts": {
+            "type": "integer",
+            "description": "Unix timestamp (in milliseconds) when this post was created/posted",
+            "minimum": 0
         }
     }
 }
