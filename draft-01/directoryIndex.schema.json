@@ -1,0 +1,43 @@
+{
+    "$id": "https://skystandards.hns.siasky.net/draft-01/directoryIndex.schema.json",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "description": "Index file of a directory, contains all directories and files in this specific directory",
+    "type": "object",
+    "properties": {
+        "directories": {
+            "type": "object",
+            "patternProperties": {
+                "^.+$": {
+                    "type": "object",
+                    "properties": {
+                        "name": {
+                            "type": "string",
+                            "description": "Name of this directory"
+                        },
+                        "created": {
+                            "type": "integer",
+                            "description": "Unix timestamp (in milliseconds) when this directory was created",
+                            "minimum": 0
+                        }
+                    }
+                }
+            },
+            "additionalProperties": false,
+            "description": "A subdirectory in this directory"
+        },
+        "files": {
+            "type": "object",
+            "patternProperties": {
+                "^.+$": {
+                    "$ref": "https://skystandards.hns.siasky.net/draft-01/directoryFile.schema.json"
+                }
+            },
+            "additionalProperties": false,
+            "description": "A file in this directory"
+        }
+    },
+    "required": [
+        "directories",
+        "files"
+    ]
+}

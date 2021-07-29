@@ -1,0 +1,59 @@
+{
+    "$id": "https://skystandards.hns.siasky.net/draft-01/directoryFile.schema.json",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "description": "Metadata of a file, can contain multiple versions",
+    "type": "object",
+    "properties": {
+        "name": {
+            "type": "string",
+            "description": "Name of this file"
+        },
+        "created": {
+            "type": "integer",
+            "description": "Unix timestamp (in milliseconds) when this file was created",
+            "minimum": 0
+        },
+        "modified": {
+            "type": "integer",
+            "description": "Unix timestamp (in milliseconds) when this file was last modified",
+            "minimum": 0
+        },
+        "mimeType": {
+            "type": "string",
+            "description": "MIME Type of the file, optional"
+        },
+        "version": {
+            "type": "integer",
+            "description": "Current version of the file. When this file was already modified 9 times, this value is 9",
+            "minimum": 0
+        },
+        "size": {
+            "type": "integer",
+            "description": "Unencrypted size of the file, in bytes",
+            "minimum": 0
+        },
+        "file": {
+            "$ref": "https://skystandards.hns.siasky.net/draft-01/fileData.schema.json",
+            "description": "The current version of a file"
+        },
+        "history": {
+            "type": "object",
+            "patternProperties": {
+                "^[0-9]+$": {
+                    "$ref": "https://skystandards.hns.siasky.net/draft-01/fileData.schema.json",
+                    "description": "A file version"
+                }
+            },
+            "description": "Historic versions of a file",
+            "additionalProperties": false
+        }
+    },
+    "required": [
+        "name",
+        "created",
+        "modified",
+        "version",
+        "size",
+        "file"
+    ]
+}
