@@ -19,6 +19,11 @@
                 "AEAD_XCHACHA20_POLY1305"
             ]
         },
+        "size": {
+            "type": "integer",
+            "description": "Unencrypted size of the file, in bytes",
+            "minimum": 0
+        },
         "chunkSize": {
             "type": "integer",
             "description": "maxiumum size of every unencrypted file chunk in bytes",
@@ -43,6 +48,7 @@
         "encryptionType",
         "chunkSize",
         "hash",
+        "size",
         "ts"
     ]
 }

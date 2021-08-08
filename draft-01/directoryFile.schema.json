@@ -27,11 +27,6 @@
             "description": "Current version of the file. When this file was already modified 9 times, this value is 9",
             "minimum": 0
         },
-        "size": {
-            "type": "integer",
-            "description": "Unencrypted size of the file, in bytes",
-            "minimum": 0
-        },
         "file": {
             "$ref": "https://skystandards.hns.siasky.net/draft-01/fileData.schema.json",
             "description": "The current version of a file"
@@ -53,7 +48,6 @@
         "created",
         "modified",
         "version",
-        "size",
         "file"
     ]
 }
