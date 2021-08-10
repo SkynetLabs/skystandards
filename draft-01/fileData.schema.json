@@ -1,0 +1,54 @@
+{
+    "$id": "https://skystandards.hns.siasky.net/draft-01/fileData.schema.json",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "description": "Specific version of a file. Immutable.",
+    "type": "object",
+    "properties": {
+        "url": {
+            "type": "string",
+            "description": "URL where the encrypted file blob can be downloaded, usually a skylink (sia://)"
+        },
+        "key": {
+            "type": "string",
+            "description": "The secret key used to encrypt this file, base64Url-encoded"
+        },
+        "encryptionType": {
+            "type": "string",
+            "description": "Which algorithm is used to encrypt and decrypt this file",
+            "examples": [
+                "AEAD_XCHACHA20_POLY1305"
+            ]
+        },
+        "size": {
+            "type": "integer",
+            "description": "Unencrypted size of the file, in bytes",
+            "minimum": 0
+        },
+        "chunkSize": {
+            "type": "integer",
+            "description": "maxiumum size of every unencrypted file chunk in bytes",
+            "exclusiveMinimum": 0,
+            "examples": [
+                16777216
+            ]
+        },
+        "hash": {
+            "$ref": "https://skystandards.hns.siasky.net/draft-01/hash.schema.json",
+            "description": "Multihash of the unencrypted file, starts with 1220 for sha256"
+        },
+        "ts": {
+            "type": "integer",
+            "description": "Unix timestamp (in milliseconds) when this version was added to the FileSystem DAC",
+            "minimum": 0
+        }
+    },
+    "required": [
+        "url",
+        "key",
+        "encryptionType",
+        "chunkSize",
+        "hash",
+        "size",
+        "ts"
+    ]
+}
